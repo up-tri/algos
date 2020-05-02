@@ -1,0 +1,56 @@
+/**
+ * VScode snippets
+ * 
+ * @since 2020.05.02
+ * @author 焼き鮭 <yaki-shake@up-tri.me>
+ */
+{
+    "EditorComment": {
+        "prefix": "ec",
+        "body": [
+            "/**",
+            " * ",
+            " * ",
+            " * @date $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
+            " * @author 焼き鮭 <yaki-shake@up-tri.me>",
+            " */",
+        ],
+        "description": "Intert the documentation comment."
+    },
+    "cppTemplate": {
+        "prefix": "cpp:init",
+        "body": [
+            "/**",
+            " * ${TM_DIRECTORY/^.+\\/(.*)$/$1/} $TM_FILENAME_BASE",
+            " * ",
+            " * @date $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
+            " * @author 焼き鮭 <yaki-shake@up-tri.me>",
+            " */",
+            "${1:namespace yakishake\n{\n  namespace unit\n  {\n    typedef signed long long int LLI;\n    typedef unsigned long long int ULLI;\n  \\}\n\\}\nusing yakishake::unit::LLI;\nusing yakishake::unit::ULLI;}",
+            "",
+            "#include <iostream>",
+            "#include <chrono>",
+            "",
+            "using std::cin;",
+            "using std::cout;",
+            "using std::endl;",
+            "",
+            "int main(int argc, char const *argv[])",
+            "{",
+            "  $2",
+            "  return 0;",
+            "}",
+        ],
+        "description": "template for C++"
+    },
+    "ConsoleIn": {
+        "prefix": "c:in",
+        "body": "std::cin >> $1;",
+        "description": "console input"
+    },
+    "ConsoleOut": {
+        "prefix": "c:out",
+        "body": "std::cout << $1 ${2:<< endl};",
+        "description": "console input"
+    }
+}
