@@ -1,6 +1,6 @@
 /**
  * VScode snippets
- * 
+ *
  * @since 2020.05.02
  * @author 焼き鮭 <yaki-shake@up-tri.me>
  */
@@ -17,6 +17,49 @@
         ],
         "description": "Intert the documentation comment."
     },
+    "pyTemplate": {
+        "prefix": "py:init",
+        "body": [
+            "# #####",
+            "# ${TM_DIRECTORY/^.+\\/(.*)$/$1/} $TM_FILENAME_BASE",
+            "# ",
+            "# @date $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
+            "# @author 焼き鮭 <yaki-shake@up-tri.me>",
+            "#",
+            "# #####",
+            "",
+            "def __main__():",
+            "    $0",
+            "    pass",
+        ],
+        "description": "template for C++"
+    },
+    "javaTemplate": {
+        "prefix": "java:init",
+        "body": [
+            "import java.util.*;",
+            "",
+            "/**",
+            " * ${TM_DIRECTORY/^.+\\/(.*)$/$1/} $TM_FILENAME_BASE",
+            " * ",
+            " * @date $CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE",
+            " * @author 焼き鮭 <yaki-shake@up-tri.me>",
+            " */",
+            "",
+            "public class Main {",
+            "  Scanner sc;",
+            "  public static void main(String[] args) {",
+            "    new Main().execute();",
+            "  }",
+            "",
+            "  public void execute() {",
+            "    this.sc = new Scanner(System.in);",
+            "    $0",
+            "  }",
+            "}",
+        ],
+        "description": "template for C++"
+    },
     "cppTemplate": {
         "prefix": "cpp:init",
         "body": [
@@ -29,19 +72,24 @@
             "${1:namespace yakishake\n{\n  namespace unit\n  {\n    typedef signed long long int LLI;\n    typedef unsigned long long int ULLI;\n  \\}\n\\}\nusing yakishake::unit::LLI;\nusing yakishake::unit::ULLI;}",
             "",
             "#include <iostream>",
-            "#include <chrono>",
+            "#include <string>",
             "",
             "using std::cin;",
             "using std::cout;",
             "using std::endl;",
             "",
-            "int main(int argc, char const *argv[])",
+            "int main()",
             "{",
             "  $2",
             "  return 0;",
             "}",
         ],
         "description": "template for C++"
+    },
+    "std::string": {
+        "prefix": "str",
+        "body": "std::string $1;",
+        "description": "console input"
     },
     "ConsoleIn": {
         "prefix": "c:in",
@@ -52,5 +100,10 @@
         "prefix": "c:out",
         "body": "std::cout << $1 ${2:<< endl};",
         "description": "console input"
-    }
+    },
+    "StringArray": {
+        "prefix": "arr:mx",
+        "body": "${1:std::string} **${2:dic} = (${1:std::string} **)calloc(${3:n}, sizeof(${1:std::string} *));",
+        "description": "console input"
+    },
 }
